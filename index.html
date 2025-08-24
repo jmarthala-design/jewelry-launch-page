@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inclusions — 92.5 Sterling Silver (Launching Soon)</title>
+  <style>
+    :root{
+      --navH:72px;
+      --brand:#731a22;          /* accent */
+      --ink:#111216;            /* text on light */
+      --muted:#5b616a;          /* secondary text */
+      --silver-0:#ffffff;       /* paper white */
+      --silver-1:#f6f7f9;       /* soft background */
+      --silver-2:#eef1f4;       /* panel light */
+      --silver-3:#dfe5ea;       /* subtle borders */
+      --steel-1:#bcc4cd;        /* metallic accent */
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;color:var(--ink);background:var(--silver-1);overflow-x:hidden}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+    section{scroll-margin-top:var(--navH)}
+
+    /* ===== Header ===== */
+    header{position:fixed;left:0;right:0;top:0;height:var(--navH);z-index:40}
+    .nav-veil{position:absolute;inset:0;background:rgba(255,255,255,.55);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--silver-3);border-radius:0 0 14px 14px;opacity:0;transition:opacity .35s ease}
+    .nav-veil.show{opacity:1}
+    .nav {
+  height: var(--navH);
+  display: flex;
+  align-items: center;
+  gap: 16px;           /* keeps spacing between logo, nav, and button */
+  justify-content: flex-start; /* align everything to left */
+}
+
+
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.04em}
+    .brand .dot{width:12px;height:12px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px rgba(115,26,34,.14)}
+    nav a{color:#2a2f36;text-decoration:none;margin:0 12px;font-size:.90rem}
+    nav a:hover{color:var(--brand)}
+    .btn{appearance:none;border:0;border-radius:999px;padding:.7rem 1.2rem;font-weight:700;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--brand),#a83a45);position:relative;overflow:hidden;transition:transform .3s ease, box-shadow .3s ease}
+    .btn::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);transform:translateX(-120%);transition:transform .9s ease}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(115,26,34,.25)}
+    .btn:hover::after{transform:translateX(120%)}
+
+    /* ===== Hero (clean white + silver accents) ===== */
+    .hero{position:relative;min-height:100svh;display:grid;place-items:center;overflow:hidden;background:radial-gradient(1200px 600px at 50% -10%, #ffffff 0%, var(--silver-2) 55%, var(--silver-1) 100%)}
+    .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 40% at 80% 10%, rgba(188,196,205,.35), transparent 60%), radial-gradient(50% 30% at 15% 0%, rgba(223,229,234,.55), transparent 60%);mix-blend:overlay;pointer-events:none}
+    .hero-inner{width:100%;padding-top:calc(var(--navH) + 24px)}
+    .headline{margin:0 0 10px;font-size:clamp(2.2rem,6vw,4.4rem);line-height:1.05;background:linear-gradient(90deg,#8d97a3,#c9d1d9,#9aa7b5);-webkit-background-clip:text;color:transparent}
+    .sub{color:var(--muted);max-width:760px}
+
+    /* countdown */
+    .countdown{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}
+    .tick{min-width:88px;text-align:center;padding:.7rem 1rem;border-radius:14px;background: linear-gradient(180deg, #ffffff, var(--silver-2));border:1px solid var(--silver-3);box-shadow:0 6px 18px rgba(157,169,182,.18)}
+    .tick b{display:block;font-size:1.4rem;letter-spacing:.02em}
+    .tick span{font-size:.8rem;color:#6b7078}
+
+    .rule{height:1px;background:linear-gradient(90deg, transparent, var(--steel-1), transparent);margin:26px 0}
+
+    /* ===== Story ===== */
+    .story{padding:88px 0;background:var(--silver-0)}
+    .story-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+    @media (max-width: 900px){.story-grid{grid-template-columns:1fr;gap:24px}}
+    .story h2{font-size:clamp(1.6rem,3.4vw,2.3rem);margin:0 0 10px}
+    .para{color:#3c424a}
+    .panel {
+  position: relative;
+  border-radius: 20px;
+  border: 1px solid var(--silver-3);
+  box-shadow: 0 20px 50px rgba(31,41,55,.08);
+  overflow: hidden;
+  background: none;     /* remove gradient */
+  min-height: auto;     /* let image decide height */
+}
+
+.panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.panel::after {
+  content: "";
+  position: absolute;
+  inset: -30% -10% -30% -10%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.5), transparent);
+  transform: skewX(-20deg) translateX(-120%);
+  animation: shine 4.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+
+    @keyframes shine{0%{transform:skewX(-20deg) translateX(-120%)}60%{transform:skewX(-20deg) translateX(160%)}100%{transform:skewX(-20deg) translateX(160%)}}
+
+    /* ===== Features ===== */
+    /* ===== Features (Luxe Upgrade) ===== */
+.features {
+  padding-bottom: 70px;
+  background: radial-gradient(1000px 600px at 50% 0%, var(--silver-0) 0%, var(--silver-1) 50%, var(--silver-2) 100%);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--silver-3);
+  border-bottom: 1px solid var(--silver-3);
+}
+.features::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://www.transparenttextures.com/patterns/brushed-alum.png'); /* metallic texture */
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.feat-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+}
+@media (max-width: 900px) { .feat-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 520px) { .feat-grid { grid-template-columns: 1fr; } }
+
+.features h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  background: linear-gradient(90deg, #b6bcc5, #e0e4e8, #bfc6cc);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.feat {
+  padding: 28px 22px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(220,225,230,0.8);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 15px 35px rgba(70, 80, 95, 0.08),
+              inset 0 0 18px rgba(255,255,255,.25);
+  transition: transform .4s ease, box-shadow .4s ease;
+  position: relative;
+  overflow: hidden;
+}
+.feat:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 45px rgba(50,60,70,.15);
+}
+.feat::after {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.4), transparent);
+  transform: translateX(-120%) rotate(25deg);
+  transition: transform 1s ease;
+}
+.feat:hover::after {
+  transform: translateX(120%) rotate(25deg);
+}
+
+.feat h4 {
+  margin: 12px 0 8px;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-size: 1.3rem;
+  background: linear-gradient(135deg, #cfd4d9, #eef1f4);
+  color: #222;
+  border: 1px solid var(--silver-3);
+  box-shadow: inset 0 2px 6px rgba(255,255,255,.6);
+}
+#veil, #fx {
+  pointer-events: none;
+}
+
+
+    /* ===== CTA ===== */
+    .cta{padding:30px 0px 80px 0px;background:var(--silver-0)}
+    .form{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+    input[type="email"]{flex:1;min-width:260px;max-width:460px;background:#fff;border:1px solid var(--silver-3);border-radius:999px;padding:.9rem 1rem;color:var(--ink);outline:none;transition:border-color .25s, box-shadow .25s}
+    input[type="email"]:focus{border-color:var(--brand);box-shadow:0 0 0 4px rgba(115,26,34,.18)}
+
+    footer{text-align:center;background-color: #731a22; color:#fff;padding:15px 0;font-size:.90rem}
+
+    /* ===== Reveal on scroll ===== */
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .9s ease, transform 1s ease}
+    .reveal.in{opacity:1;transform:none}
+.reveal h2{
+  font-size: 2.2rem;
+}
+    /* ===== Floating Particles (light) ===== */
+    #fx{position:fixed;inset:0;z-index:-3;opacity:.35}
+  </style>
+</head>
+<body>
+  <canvas id="fx" aria-hidden="true"></canvas>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-veil" id="veil"></div>
+    <div class="container nav">
+      <div class="brand"><span class="dot"></span>Inclusions</div>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#notify">Notify</a>
+      </nav>
+      <button class="btn" onclick="document.querySelector('#notify').scrollIntoView({behavior:'smooth'})">Notify Me</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="container hero-inner reveal">
+      <h1 class="headline">92.5 Sterling Silver — Launching Soon</h1>
+      <p class="sub">The next chapter of <b>Inclusions</b> (renowned for 18K gold plated jewelry) — now unveiling the purity of sterling silver with a modern anti‑tarnish finish.</p>
+
+      <div class="countdown" id="countdown" aria-live="polite">
+        <div class="tick"><b id="d">0</b><span>Days</span></div>
+        <div class="tick"><b id="h">0</b><span>Hours</span></div>
+        <div class="tick"><b id="m">0</b><span>Minutes</span></div>
+        <div class="tick"><b id="s">0</b><span>Seconds</span></div>
+      </div>
+
+      <div class="rule" role="presentation"></div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn" onclick="document.querySelector('#notify').scrollIntoView({behavior:'smooth'})">Get Launch Reminder</button>
+        <a class="btn" href="#about" style="text-decoration:none;background:linear-gradient(135deg,#cfd6dd,#eef1f4);color:#1d232a;border:1px solid var(--silver-3)">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / STORY -->
+  <section class="story" id="about">
+    <div class="container story-grid">
+      <div class="reveal">
+        <h2>From 18K Gold Plated to 92.5 Sterling Silver</h2>
+        <p class="para">Crafted with hallmarked 92.5 silver for everyday elegance. A nickel‑safe, skin‑friendly promise. Each piece sealed with a discreet e‑coat to preserve lustre while respecting the natural tone of silver.</p>
+        <p class="para">This pre‑launch teases what’s to come — thoughtful silhouettes, precision set stones, and our signature <span style="color:var(--brand);font-weight:700">Inclusions</span> finish.</p>
+      </div>
+      <div class="panel reveal">
+  <img src="images/sterling-silver.jpg" alt="Sterling silver jewelry" >
+</div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="reveal" style="text-align:center;margin-bottom:20px">
+        <h2>Our Silver Standard</h2>
+        <p class="para">Purity, comfort, and finish — engineered for modern luxury.</p>
+      </div>
+      <div class="feat-grid">
+        <div class="feat reveal">
+          <div class="icon">✓</div>
+          <h4>Hallmarked 925</h4>
+          <p class="para">Recognised purity stamp for authentic sterling silver.</p>
+        </div>
+        <div class="feat reveal">
+          <div class="icon">◎</div>
+          <h4>Anti‑Tarnish Coat</h4>
+          <p class="para">Invisible e‑coat to slow oxidation and maintain shine.</p>
+        </div>
+        <div class="feat reveal">
+          <div class="icon">♡</div>
+          <h4>Hypoallergenic</h4>
+          <p class="para">Nickel‑safe and gentle on sensitive skin for daily wear.</p>
+        </div>
+        <div class="feat reveal">
+          <div class="icon">★</div>
+          <h4>Crafted Detail</h4>
+          <p class="para">Mirror‑polished surfaces and secure settings engineered to last.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / NOTIFY -->
+  <section class="cta" id="notify">
+    <div class="container">
+      <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto">
+        <h2>Be the first to experience the collection</h2>
+        <p class="para">Join the list for an exclusive first look when we go live.</p>
+        <form class="form" onsubmit="event.preventDefault(); document.getElementById('thanks').hidden=false; this.reset();">
+
+          <input id="email" type="email" placeholder="you@example.com" required />
+          <button class="btn" type="submit">Notify Me</button>
+        </form>
+        <p id="thanks" hidden class="para" style="margin-top:12px;color:#2a2f36">Thank you — we’ll notify you at launch.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Inclusions. 92.5 Sterling Silver
+  </footer>
+
+  <script>
+    /* ===== Header veil on scroll ===== */
+    const veil = document.getElementById('veil');
+    const onScroll = () => { veil.classList.toggle('show', window.scrollY > 16); };
+    document.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+
+    /* ===== IntersectionObserver text reveals ===== */
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:0.2});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    /* ===== Countdown (set your exact launch moment in UTC ISO) ===== */
+    const launchISO = '2025-09-30T10:00:00Z';
+    const dEl = document.getElementById('d');
+    const hEl = document.getElementById('h');
+    const mEl = document.getElementById('m');
+    const sEl = document.getElementById('s');
+    function updateCountdown(){
+      const now = new Date().getTime();
+      const t = new Date(launchISO).getTime() - now;
+      if(t <= 0){ dEl.textContent=hEl.textContent=mEl.textContent=sEl.textContent='0'; return; }
+      const sec = Math.floor(t/1000);
+      const d = Math.floor(sec/86400);
+      const h = Math.floor((sec%86400)/3600);
+      const m = Math.floor((sec%3600)/60);
+      const s = sec%60;
+      dEl.textContent = d; hEl.textContent = h; mEl.textContent = m; sEl.textContent = s;
+    }
+    updateCountdown();
+    setInterval(updateCountdown,1000);
+
+    /* ===== Floating silver particles (light theme) ===== */
+    const c = document.getElementById('fx');
+    const ctx = c.getContext('2d');
+    let W=0,H=0,px=[];
+    function resize(){ W = c.width = window.innerWidth * devicePixelRatio; H = c.height = window.innerHeight * devicePixelRatio; }
+    window.addEventListener('resize', resize); resize();
+
+    const N = 70; // subtle amount
+    function seed(){ px = []; for(let i=0;i<N;i++) px.push({
+      x: Math.random()*W,
+      y: Math.random()*H,
+      r: (Math.random()*1.1+0.5)*devicePixelRatio,
+      a: Math.random()*Math.PI*2,
+      s: Math.random()*0.22+0.06
+    }); }
+    seed();
+
+    function step(){
+      ctx.clearRect(0,0,W,H);
+      for(const p of px){
+        p.x += Math.cos(p.a)*p.s; p.y += Math.sin(p.a)*p.s; p.a += (Math.random()-0.5)*0.02;
+        if(p.x<0) p.x=W; if(p.x>W) p.x=0; if(p.y<0) p.y=H; if(p.y>H) p.y=0;
+        const g = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*5);
+        g.addColorStop(0,'rgba(198,205,214,0.26)');
+        g.addColorStop(1,'rgba(198,205,214,0)');
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
+      }
+      requestAnimationFrame(step);
+    }
+    step();
+  </script>
+</body>
+</html>
