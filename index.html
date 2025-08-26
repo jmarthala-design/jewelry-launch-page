@@ -19,7 +19,15 @@
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;color:var(--ink);background:var(--silver-1);overflow-x:hidden}
+    body {
+  margin: 0;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--silver-1);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased; /* make rendering closer to Windows */
+  -moz-osx-font-smoothing: grayscale;
+}
     .container{max-width:1200px;margin:0 auto;padding:0 24px}
     section{scroll-margin-top:var(--navH)}
 
@@ -430,3 +438,4 @@
   </script>
 </body>
 </html>
+
